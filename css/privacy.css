@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DMSans';
+    color: white;
+}
+
+.content {
+    max-width: 800px;
+    margin: 16px;
+}
+
+main h1 {
+    margin: 64px 0px;
+}
+
+main h2, main a {
+    font-weight: 400;
+}
