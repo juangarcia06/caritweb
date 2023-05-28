@@ -81,15 +81,26 @@ body {
     align-items: flex-start;
 }
 
-.footer a, .footer p {
-    margin: 12px;
+.footer a,
+.footer p {
+    margin: 14px;
     color: white;
     text-decoration: none;
     font-family: 'DMSans';
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
 }
 
-.footer a:hover, .footer p:hover {
+.footer a:hover,
+.footer p:hover {
     color: rgba(255, 255, 255, 0.9);
+}
+
+@media only screen and (max-width: 550px) {
+    .footer p {
+        display: none;
+    }
+    .footer a {
+        font-size: 12px;
+    }
 }
