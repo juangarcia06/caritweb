@@ -36,35 +36,20 @@ body {
     margin: 24px;
 }
 
-.hero a {
-    width: 120px;
-    height: 45px;
-    padding: 4px;
-    margin-bottom: 4px;
-    border: 2px rgba(255, 255, 255, 0.2) solid;
-    border-radius: 100px;
+.hero div {
     display: flex;
-    justify-content: center;
+    flex-flow: wrap row;
+    justify-content: space-between;
     align-items: center;
-    color: white;
-    text-decoration: none;
-    font-family: 'DMSans';
-    font-weight: 400;
 }
 
-.hero a:hover {
-    border: 2px rgba(255, 255, 255, 0.5) solid;
+.hero a {
+    text-decoration: none;
 }
 
 .hero .appicon {
     width: 20px;
-    margin: 8px;
-    color: white;
-}
-
-.hero .appleicon {
-    width: 18px;
-    margin: 8px;
+    margin: 32px;
     color: white;
 }
 
