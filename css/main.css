@@ -37,7 +37,10 @@ body {
 }
 
 .hero a {
-    padding: 6px;
+    width: 120px;
+    height: 45px;
+    padding: 4px;
+    margin-bottom: 4px;
     border: 2px rgba(255, 255, 255, 0.2) solid;
     border-radius: 100px;
     display: flex;
@@ -50,20 +53,17 @@ body {
 }
 
 .hero a:hover {
-    padding: 6px;
     border: 2px rgba(255, 255, 255, 0.5) solid;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    font-family: 'DMSans';
-    font-weight: 400;
 }
 
 .hero .appicon {
     width: 20px;
+    margin: 8px;
+    color: white;
+}
+
+.hero .appleicon {
+    width: 18px;
     margin: 8px;
     color: white;
 }
