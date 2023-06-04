@@ -1,18 +1,18 @@
 @font-face {
     font-family: 'DMSans';
-    src: url('../DMSans-Bold.ttf') format('truetype');
+    src: url('./DMSans-Bold.ttf') format('truetype');
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'DMSans';
-    src: url('../DMSans-Medium.ttf') format('truetype');
+    src: url('./DMSans-Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'DMSans';
-    src: url('../DMSans-Regular.ttf') format('truetype');
+    src: url('./DMSans-Regular.ttf') format('truetype');
     font-weight: 400;
 }
 
@@ -48,7 +48,6 @@ body {
 }
 
 .hero .appicon {
-    width: 20px;
     margin: 32px;
     color: white;
 }
@@ -71,7 +70,7 @@ body {
     margin: 14px;
     color: white;
     text-decoration: none;
-    font-family: 'DMSans';
+    font-family: 'DMSans', system-ui, sans-serif;
     font-size: 14px;
     font-weight: 400;
 }

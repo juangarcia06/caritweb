@@ -3,7 +3,7 @@ main {
     flex-flow: wrap column;
     justify-content: center;
     align-items: center;
-    font-family: 'DMSans';
+    font-family: 'DMSans', system-ui, sans-serif;
     color: white;
 }
 
