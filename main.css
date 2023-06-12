@@ -30,6 +30,12 @@ body {
     align-items: center;
 }
 
+.hero h1 {
+    background-color: #111111;
+    color: #111111;
+    user-select: none;
+}
+
 .hero .logo {
     width: 300px;
     height: auto;
