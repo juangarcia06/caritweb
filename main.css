@@ -19,6 +19,10 @@
 body {
     margin: 0;
     background-color: #111111;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .hero {
@@ -90,6 +94,7 @@ body {
     .footer p {
         display: none;
     }
+
     .footer a {
         font-size: 12px;
     }
