@@ -33,7 +33,8 @@
         <img class="logo" src="../logo.png"
             alt="Carit ayuda amor, amorosa, relaciones y problemas de parejas, asistente de relaciones ia inteligencia artificial">
         <div>
-            <a id="android-link" target="_blank" href="https://play.google.com/store/apps/details?com.juantorrens.carit">
+            <a id="android-link" target="_blank"
+                href="https://play.google.com/store/apps/details?com.juantorrens.carit">
                 <img width="20px" class="appicon" src="../google-play.svg" alt="Download Descargar Carit Play Android">
                 <p>Descargar</p>
             </a>
@@ -81,7 +82,7 @@
     const analytics = getAnalytics(app);
 
     function sendAnalytics(platform) {
-        logEvent(analytics, 'download', { platform });
+        logEvent(analytics, 'sign_up', { platform });
     }
 
     function checkFirstVisit() {
@@ -90,16 +91,17 @@
             sendReLoad();
         } else {
             localStorage.setItem('visited', true);
-            sendLoad();
+            sendFirstLoad();
         }
     }
 
-    function sendLoad() {
-        logEvent(analytics, 'load');
+    function sendFirstLoad() {
+        logEvent(analytics, 'first');
+        sendLoad();
     }
 
-    function sendReLoad() {
-        logEvent(analytics, 'reload');
+    function sendLoad() {
+        logEvent(analytics, 'pageview');
     }
 
     checkFirstVisit();
