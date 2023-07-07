@@ -30,7 +30,7 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { logEvent, getAnalytics  } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+        import { logEvent, getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -72,7 +72,19 @@
             logEvent(analytics, 'reload');
         }
 
-        checkFirstVisit();
+        document.addEventListener('DOMContentLoaded', function () {
+            checkFirstVisit();
+            const androidLink = document.querySelector('#android-link');
+            const appleLink = document.querySelector('#apple-link');
+
+            androidLink.addEventListener('click', function () {
+                sendAnalytics('android');
+            });
+
+            appleLink.addEventListener('click', function () {
+                sendAnalytics('apple');
+            });
+        });
     </script>
 </head>
 
@@ -81,12 +93,11 @@
         <img class="logo" src="../logo.png"
             alt="Carit ayuda amor, amorosa, relaciones y problemas de parejas, asistente de relaciones ia inteligencia artificial">
         <div>
-            <a target="_blank" href="https://play.google.com/store/apps/details?com.juantorrens.carit"
-                onclick="sendAnalytics('android')">
+            <a target="_blank" href="https://play.google.com/store/apps/details?com.juantorrens.carit">
                 <img width="20px" class="appicon" src="../google-play.svg" alt="Download Descargar Carit Play Android">
                 <p>Descargar</p>
             </a>
-            <a target="_blank" href="https://forms.gle/HjRFYsz8qsAheEFW7" onclick="sendAnalytics('apple')">
+            <a target="_blank" href="https://forms.gle/HjRFYsz8qsAheEFW7">
                 <img width="20px" class="appicon" src="../apple.svg" alt="Carit ayuda amorosa y de relaciones">
                 <p>Descargar</p>
             </a>
