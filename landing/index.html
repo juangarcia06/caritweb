@@ -72,18 +72,17 @@
             logEvent(analytics, 'reload');
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            checkFirstVisit();
-            const androidLink = document.querySelector('#android-link');
-            const appleLink = document.querySelector('#apple-link');
+        checkFirstVisit();
+        
+        const androidLink = document.querySelector('#android-link');
+        const appleLink = document.querySelector('#apple-link');
 
-            androidLink.addEventListener('click', function () {
-                sendAnalytics('android');
-            });
+        androidLink.addEventListener('click', function () {
+            sendAnalytics('android');
+        });
 
-            appleLink.addEventListener('click', function () {
-                sendAnalytics('apple');
-            });
+        appleLink.addEventListener('click', function () {
+            sendAnalytics('apple');
         });
     </script>
 </head>
