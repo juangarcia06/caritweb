@@ -88,7 +88,7 @@
     function checkFirstVisit() {
         console.log("Checked visit")
         if (localStorage.getItem('visited')) {
-            sendReLoad();
+            sendLoad();
         } else {
             localStorage.setItem('visited', true);
             sendFirstLoad();
