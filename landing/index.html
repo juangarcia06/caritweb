@@ -73,15 +73,15 @@
         }
 
         checkFirstVisit();
-        
+
         const androidLink = document.querySelector('#android-link');
         const appleLink = document.querySelector('#apple-link');
 
-        androidLink.addEventListener('click', function () {
+        androidLink.addEventListener('click', () => {
             sendAnalytics('android');
         });
 
-        appleLink.addEventListener('click', function () {
+        appleLink.addEventListener('click', () => {
             sendAnalytics('apple');
         });
     </script>
