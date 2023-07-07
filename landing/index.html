@@ -26,9 +26,57 @@
     <meta name="twitter:description"
         content="Obtén los mejores consejos románticos con Carit, la aplicación especializada en amor. Descubre cómo mejorar tus relaciones y conquistar a tu pareja. ¡Descarga la app ahora!">
     <meta name="twitter:image" content="https://carit.love/logo.png">
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import { logEvent, getAnalytics  } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBRIFjrz_RuzTohV-4dxdI6TU7WDvbzNBo",
+            authDomain: "carit-pixel.firebaseapp.com",
+            projectId: "carit-pixel",
+            storageBucket: "carit-pixel.appspot.com",
+            messagingSenderId: "926865194134",
+            appId: "1:926865194134:web:0dd4cc5eef5ffe918656b7",
+            measurementId: "G-JJXPQ5KC7N"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        function sendAnalytics(platform) {
+            logEvent(analytics, 'download', { platform });
+        }
+
+        function checkFirstVisit() {
+            console.log("Checked visit")
+            if (localStorage.getItem('visited')) {
+                sendReLoad();
+            } else {
+                localStorage.setItem('visited', true);
+                sendLoad();
+            }
+        }
+
+        function sendLoad() {
+            logEvent(analytics, 'load');
+        }
+
+        function sendReLoad() {
+            logEvent(analytics, 'reload');
+        }
+
+        checkFirstVisit();
+    </script>
 </head>
 
-<body onload="checkFirstVisit()">
+<body>
     <main class="hero">
         <img class="logo" src="../logo.png"
             alt="Carit ayuda amor, amorosa, relaciones y problemas de parejas, asistente de relaciones ia inteligencia artificial">
@@ -56,52 +104,6 @@
             <a href="../help/">Ayuda</a>
         </div>
     </nav>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyBRIFjrz_RuzTohV-4dxdI6TU7WDvbzNBo",
-            authDomain: "carit-pixel.firebaseapp.com",
-            projectId: "carit-pixel",
-            storageBucket: "carit-pixel.appspot.com",
-            messagingSenderId: "926865194134",
-            appId: "1:926865194134:web:0dd4cc5eef5ffe918656b7",
-            measurementId: "G-JJXPQ5KC7N"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-        function sendAnalytics(platform) {
-            analytics.logEvent('download', { platform });
-        }
-
-        function checkFirstVisit() {
-            if (localStorage.getItem('visited')) {
-                sendReLoad();
-            } else {
-                localStorage.setItem('visited', true);
-                sendLoad();
-            }
-        }
-
-        function sendLoad() {
-            analytics.logEvent('load');
-        }
-
-        function sendReLoad() {
-            analytics.logEvent('reload');
-        }
-
-    </script>
 </body>
 
 </html>
