@@ -33,11 +33,11 @@
         <img class="logo" src="../logo.png"
             alt="Carit ayuda amor, amorosa, relaciones y problemas de parejas, asistente de relaciones ia inteligencia artificial">
         <div>
-            <a target="_blank" href="https://play.google.com/store/apps/details?com.juantorrens.carit">
+            <a id="android-link" target="_blank" href="https://play.google.com/store/apps/details?com.juantorrens.carit">
                 <img width="20px" class="appicon" src="../google-play.svg" alt="Download Descargar Carit Play Android">
                 <p>Descargar</p>
             </a>
-            <a target="_blank" href="https://forms.gle/HjRFYsz8qsAheEFW7">
+            <a id="apple-link" target="_blank" href="https://forms.gle/HjRFYsz8qsAheEFW7">
                 <img width="20px" class="appicon" src="../apple.svg" alt="Carit ayuda amorosa y de relaciones">
                 <p>Descargar</p>
             </a>
@@ -55,65 +55,65 @@
             <a href="../help/">Ayuda</a>
         </div>
     </nav>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-        import { logEvent, getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyBRIFjrz_RuzTohV-4dxdI6TU7WDvbzNBo",
-            authDomain: "carit-pixel.firebaseapp.com",
-            projectId: "carit-pixel",
-            storageBucket: "carit-pixel.appspot.com",
-            messagingSenderId: "926865194134",
-            appId: "1:926865194134:web:0dd4cc5eef5ffe918656b7",
-            measurementId: "G-JJXPQ5KC7N"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-        function sendAnalytics(platform) {
-            logEvent(analytics, 'download', { platform });
-        }
-
-        function checkFirstVisit() {
-            console.log("Checked visit")
-            if (localStorage.getItem('visited')) {
-                sendReLoad();
-            } else {
-                localStorage.setItem('visited', true);
-                sendLoad();
-            }
-        }
-
-        function sendLoad() {
-            logEvent(analytics, 'load');
-        }
-
-        function sendReLoad() {
-            logEvent(analytics, 'reload');
-        }
-
-        checkFirstVisit();
-
-        const androidLink = document.querySelector('#android-link');
-        const appleLink = document.querySelector('#apple-link');
-
-        androidLink.addEventListener('click', () => {
-            sendAnalytics('android');
-        });
-
-        appleLink.addEventListener('click', () => {
-            sendAnalytics('apple');
-        });
-    </script>
 </body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { logEvent, getAnalytics } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyBRIFjrz_RuzTohV-4dxdI6TU7WDvbzNBo",
+        authDomain: "carit-pixel.firebaseapp.com",
+        projectId: "carit-pixel",
+        storageBucket: "carit-pixel.appspot.com",
+        messagingSenderId: "926865194134",
+        appId: "1:926865194134:web:0dd4cc5eef5ffe918656b7",
+        measurementId: "G-JJXPQ5KC7N"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    function sendAnalytics(platform) {
+        logEvent(analytics, 'download', { platform });
+    }
+
+    function checkFirstVisit() {
+        console.log("Checked visit")
+        if (localStorage.getItem('visited')) {
+            sendReLoad();
+        } else {
+            localStorage.setItem('visited', true);
+            sendLoad();
+        }
+    }
+
+    function sendLoad() {
+        logEvent(analytics, 'load');
+    }
+
+    function sendReLoad() {
+        logEvent(analytics, 'reload');
+    }
+
+    checkFirstVisit();
+
+    const androidLink = document.querySelector('#android-link');
+    const appleLink = document.querySelector('#apple-link');
+
+    androidLink.addEventListener('click', () => {
+        sendAnalytics('android');
+    });
+
+    appleLink.addEventListener('click', () => {
+        sendAnalytics('apple');
+    });
+</script>
 
 </html>
