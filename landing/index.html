@@ -83,15 +83,17 @@
 
     window.sendAnalytics = function sendAnalytics(platform) {
         logEvent(analytics, `${platform}download`);
+        console.log(`${platform}download`)
     }
 
     function checkFirstVisit() {
-        console.log("Checked visit")
         if (localStorage.getItem('visited')) {
             sendLoad();
+            console.log("Checked visit")
         } else {
             localStorage.setItem('visited', true);
             sendFirstLoad();
+            console.log("Checked first visit")
         }
     }
 
